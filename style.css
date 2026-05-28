@@ -1,0 +1,162 @@
+/* FUNDO GERAL */
+body{
+    margin:0;
+    padding:0;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:'Montserrat',sans-serif;
+
+    /* Fundo laboratório */
+    background:
+    linear-gradient(rgba(10,12,18,.82), rgba(10,12,18,.88)),
+    url('https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1600&auto=format&fit=crop');
+
+    background-size:cover;
+    background-position:center;
+    overflow:hidden;
+}
+
+/* EFEITO DE LUZ NO FUNDO */
+body::before{
+    content:'';
+    position:fixed;
+    width:500px;
+    height:500px;
+    background:rgba(0,255,255,0.08);
+    filter:blur(120px);
+    top:-100px;
+    left:-100px;
+    border-radius:50%;
+}
+
+body::after{
+    content:'';
+    position:fixed;
+    width:500px;
+    height:500px;
+    background:rgba(0,120,255,0.08);
+    filter:blur(120px);
+    bottom:-100px;
+    right:-100px;
+    border-radius:50%;
+}
+
+/* ESTRUTURA DO CELULAR */
+.app-container{
+    position:relative;
+    width:390px;
+    height:820px;
+
+    background:#0d1117;
+
+    border-radius:45px;
+
+    border:10px solid #1f2937;
+
+    box-shadow:
+    0 0 0 4px #000,
+    0 30px 80px rgba(0,0,0,.75),
+    inset 0 0 10px rgba(255,255,255,.05);
+
+    overflow:hidden;
+
+    backdrop-filter:blur(10px);
+}
+
+/* CAMERA SUPERIOR */
+.app-container::before{
+    content:'';
+    position:absolute;
+    top:12px;
+    left:50%;
+    transform:translateX(-50%);
+    width:120px;
+    height:28px;
+    background:#000;
+    border-radius:20px;
+    z-index:999;
+}
+
+/* REFLEXO DA TELA */
+.app-container::after{
+    content:'';
+    position:absolute;
+    top:0;
+    left:-40%;
+    width:80%;
+    height:100%;
+    background:linear-gradient(
+        120deg,
+        rgba(255,255,255,0.12),
+        rgba(255,255,255,0.02),
+        transparent
+    );
+    transform:skewX(-15deg);
+}
+
+/* CABEÇALHO */
+.app-header{
+    background:rgba(15,23,42,.85);
+    backdrop-filter:blur(15px);
+    border-bottom:1px solid rgba(255,255,255,.06);
+}
+
+/* BARRA INFERIOR */
+.bottom-nav{
+    background:rgba(15,23,42,.9);
+    backdrop-filter:blur(12px);
+    border-top:1px solid rgba(255,255,255,.08);
+}
+
+/* CARDS */
+.glass-form,
+.welcome-card,
+.service-card,
+.action-card,
+.stat-card{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(12px);
+
+    box-shadow:
+    0 8px 20px rgba(0,0,0,.25);
+
+    border-radius:20px;
+}
+
+/* BOTÕES */
+.btn-primary{
+    background:linear-gradient(135deg,#00c6ff,#0072ff);
+    border:none;
+    border-radius:14px;
+    transition:.3s;
+}
+
+.btn-primary:hover{
+    transform:translateY(-2px);
+    box-shadow:0 10px 20px rgba(0,114,255,.35);
+}
+
+/* RESPONSIVO */
+@media(max-width:480px){
+
+    body{
+        background:#0d1117;
+    }
+
+    .app-container{
+        width:100%;
+        height:100vh;
+        border:none;
+        border-radius:0;
+        box-shadow:none;
+    }
+
+    .app-container::before,
+    .app-container::after{
+        display:none;
+    }
+}
