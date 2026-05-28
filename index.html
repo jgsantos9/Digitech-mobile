@@ -1,338 +1,88 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+
+  <!DOCTYPE html>
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="theme-color" content="#0d0e12">
-    <title>Digtech Informática - Serviços Mobile</title>
-    
-    <!-- Google Fonts: Outfit (modern tech font) and Montserrat -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet">
-    
-    <!-- FontAwesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Main Stylesheet -->
-    <link rel="stylesheet" href="index.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digitech Informática</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: white;
+      text-align: center;
+    }
+
+    header {
+      background: #1e293b;
+      padding: 30px 20px;
+    }
+
+    header img {
+      width: 120px;
+      border-radius: 20px;
+    }
+
+    h1 {
+      margin: 10px 0;
+      font-size: 28px;
+    }
+
+    p {
+      color: #cbd5e1;
+    }
+
+    .container {
+      padding: 40px 20px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #22c55e;
+      color: white;
+      padding: 15px 25px;
+      margin: 10px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .btn:hover {
+      background: #16a34a;
+    }
+
+    footer {
+      margin-top: 40px;
+      padding: 20px;
+      background: #1e293b;
+      font-size: 14px;
+      color: #94a3b8;
+    }
+  </style>
 </head>
+
 <body>
-    <!-- Main Device Wrapper: Emulates a real phone on desktop, seamless on mobile -->
-    <div class="app-container">
-        <!-- Status Bar Simulation for native Android feel -->
-        <div class="android-status-bar">
-            <div class="status-time" id="statusTime">10:00</div>
-            <div class="status-icons">
-                <i class="fa-solid fa-signal"></i>
-                <i class="fa-solid fa-wifi"></i>
-                <i class="fa-solid fa-battery-full"></i>
-            </div>
-        </div>
 
-        <!-- App Header -->
-        <header class="app-header">
-            <div class="logo-area">
-                <!-- Cropped circle logo from the flyer -->
-                <img src="logo.jpg" alt="Digtech Logo" class="tech-logo">
-                <div class="logo-text">
-                    <span class="logo-title">DIG<span>TECH</span></span>
-                    <span class="logo-subtitle">INFORMÁTICA</span>
-                </div>
-            </div>
-        </header>
+<header>
+  <!-- COLOQUE SUA LOGO AQUI (opcional) -->
+  <h1>Digitech Informática</h1>
+  <p>Assistência técnica e soluções digitais</p>
+</header>
 
-        <!-- Dynamic Content Body -->
-        <main class="app-body">
-            
-            <!-- SECTION 1: HOME (INÍCIO) -->
-            <section id="tab-home" class="app-section active">
-                <div class="welcome-card">
-                    <div class="welcome-glow"></div>
-                    <div class="welcome-content">
-                        <h2><span class="highlight">Sejam Bem vindos</span></h2>
-                        <p class="welcome-slogan">Precisando de suporte em informática? Atendimento rápido, técnico e garantido para você ou sua empresa.</p>
-                    </div>
-                </div>
+<div class="container">
+  <h2>Bem-vindo ao nosso aplicativo</h2>
+  <p>Acesse nossos serviços de forma rápida e fácil.</p>
 
-                <div class="promo-banner">
-                    <div class="banner-badge"><i class="fa-solid fa-circle-check"></i> Garantia de Qualidade</div>
-                    <h3>Suporte de Alta Performance</h3>
-                    <div class="services-list-preview">
-                        <div class="preview-item">
-                            <i class="fa-solid fa-screwdriver-wrench"></i>
-                            <span>Assistência Técnica</span>
-                        </div>
-                        <div class="preview-item">
-                            <i class="fa-solid fa-shield-halved"></i>
-                            <span>Manutenção Preventiva</span>
-                        </div>
-                        <div class="preview-item">
-                            <i class="fa-solid fa-network-wired"></i>
-                            <span>Suporte em Redes Lans</span>
-                        </div>
-                    </div>
-                </div>
+  <a class="btn" href="#">📞 Falar no WhatsApp</a>
+  <a class="btn" href="#">💻 Solicitar Suporte</a>
+  <a class="btn" href="#">🛠 Serviços</a>
+</div>
 
-                <div class="quick-stats">
-                    <div class="stat-card">
-                        <span class="stat-number">100%</span>
-                        <span class="stat-label">Confiável</span>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-number">87</span>
-                        <span class="stat-label">DDD Pernambuco</span>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-number">24/7</span>
-                        <span class="stat-label">Suporte Online</span>
-                    </div>
-                </div>
+<footer>
+  © 2026 Digitech Informática - Todos os direitos reservados
+</footer>
 
-                <div class="action-card" onclick="switchTab('tab-budget')">
-                    <div class="action-icon"><i class="fa-solid fa-receipt"></i></div>
-                    <div class="action-text">
-                        <h4>Solicitar Orçamento Grátis</h4>
-                        <p>Descreva seu problema e anexe arquivos ou fotos.</p>
-                    </div>
-                    <div class="action-arrow"><i class="fa-solid fa-chevron-right"></i></div>
-                </div>
-            </section>
-
-            <!-- SECTION 2: SERVIÇOS & VALORES -->
-            <section id="tab-services" class="app-section">
-                <div class="section-header">
-                    <h2><i class="fa-solid fa-tags header-icon"></i> Serviços e Valores</h2>
-                    <p>Veja nossa tabela base de serviços e preços médios.</p>
-                </div>
-
-                <div class="search-box">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                    <input type="text" id="serviceSearch" placeholder="Buscar serviço..." onkeyup="filterServices()">
-                </div>
-
-                <div class="services-container" id="servicesContainer">
-                    <!-- Services list will be populated dynamically by JS -->
-                </div>
-
-                <div class="info-alert">
-                    <i class="fa-solid fa-circle-info"></i>
-                    <p>Valores médios baseados em mão de obra padrão. Peças de reposição são cobradas separadamente ou fornecidas pelo cliente.</p>
-                </div>
-            </section>
-
-            <!-- SECTION 3: CADASTRO DE CLIENTES -->
-            <section id="tab-clients" class="app-section">
-                <div class="section-header">
-                    <h2><i class="fa-solid fa-user-plus header-icon"></i> Cadastro de Clientes</h2>
-                    <p>Cadastre seus dados para agilizar atendimentos e solicitações.</p>
-                </div>
-
-                <!-- Registration Form -->
-                <form id="clientForm" class="glass-form" onsubmit="handleClientRegistration(event)">
-                    <div class="form-group">
-                        <label for="clientName"><i class="fa-solid fa-user"></i> Nome Completo</label>
-                        <input type="text" id="clientName" required placeholder="Digite seu nome completo">
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="clientPhone"><i class="fa-solid fa-phone"></i> Telefone / Celular</label>
-                            <input type="tel" id="clientPhone" required placeholder="(87) 99999-9999">
-                        </div>
-                        <div class="form-group">
-                            <label for="clientEmail"><i class="fa-solid fa-envelope"></i> E-mail</label>
-                            <input type="email" id="clientEmail" required placeholder="seu@email.com">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="clientAddress"><i class="fa-solid fa-location-dot"></i> Endereço para Visita</label>
-                        <input type="text" id="clientAddress" required placeholder="Rua, Número, Bairro, Cidade">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="clientNotes"><i class="fa-solid fa-comment-dots"></i> Observações adicionais</label>
-                        <textarea id="clientNotes" rows="3" placeholder="Ponto de referência ou detalhes sobre o acesso..."></textarea>
-                    </div>
-
-                    <button type="submit" class="btn-primary">
-                        <span><i class="fa-solid fa-save"></i> Salvar Cadastro</span>
-                    </button>
-                </form>
-
-                <!-- Current Saved Registration Card -->
-                <div id="savedClientCard" class="glass-card info-card hidden">
-                    <div class="card-header">
-                        <h3><i class="fa-solid fa-circle-check text-success"></i> Seu Cadastro Ativo</h3>
-                        <button class="btn-text-danger" onclick="clearSavedClient()"><i class="fa-solid fa-trash"></i> Excluir</button>
-                    </div>
-                    <div class="card-body">
-                        <p><strong>Nome:</strong> <span id="dispName"></span></p>
-                        <p><strong>Fone:</strong> <span id="dispPhone"></span></p>
-                        <p><strong>E-mail:</strong> <span id="dispEmail"></span></p>
-                        <p><strong>Endereço:</strong> <span id="dispAddress"></span></p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- SECTION 4: SOLICITAÇÃO DE ORÇAMENTO & UPLOADS -->
-            <section id="tab-budget" class="app-section">
-                <div class="section-header">
-                    <h2><i class="fa-solid fa-file-invoice-dollar header-icon"></i> Solicitar Orçamento</h2>
-                    <p>Envie detalhes sobre o problema e anexe documentos ou fotos.</p>
-                </div>
-
-                <form id="budgetForm" class="glass-form" onsubmit="handleBudgetSubmission(event)">
-                    <!-- Select Service -->
-                    <div class="form-group">
-                        <label for="budgetService"><i class="fa-solid fa-gears"></i> Tipo de Serviço Requerido</label>
-                        <select id="budgetService" required>
-                            <option value="" disabled selected>Selecione um serviço base...</option>
-                            <!-- Services list filled dynamically -->
-                        </select>
-                    </div>
-
-                    <!-- Problem Description -->
-                    <div class="form-group">
-                        <label for="budgetDescription"><i class="fa-solid fa-file-pen"></i> Descrição do Problema / Necessidade</label>
-                        <textarea id="budgetDescription" required rows="4" placeholder="Ex: Meu notebook liga mas a tela fica preta com ruídos..." oninput="updateDescriptionLength()"></textarea>
-                        <div class="textarea-counter"><span id="descLen">0</span>/500 caracteres</div>
-                    </div>
-
-                    <!-- File Upload Area (DOC, JPG, etc.) -->
-                    <div class="form-group">
-                        <label><i class="fa-solid fa-paperclip"></i> Anexar Arquivos (Imagens, Print de erros, DOCs)</label>
-                        <div class="upload-zone" id="uploadZone">
-                            <input type="file" id="fileInput" multiple accept=".jpg,.jpeg,.png,.doc,.docx,.pdf" onchange="handleFileSelect(event)" style="display: none;">
-                            <div class="upload-zone-content" onclick="document.getElementById('fileInput').click()">
-                                <i class="fa-solid fa-cloud-arrow-up"></i>
-                                <span>Arraste ou clique para enviar arquivos</span>
-                                <span class="upload-formats">Suporta: JPG, PNG, DOC, PDF (Max. 5MB por arquivo)</span>
-                            </div>
-                        </div>
-
-                        <!-- Uploaded Files List -->
-                        <div class="uploaded-files-list" id="uploadedFilesList">
-                            <!-- Items populated dynamically by JS -->
-                        </div>
-                    </div>
-
-                    <button type="submit" class="btn-primary">
-                        <span><i class="fa-solid fa-paper-plane"></i> Enviar Solicitação</span>
-                    </button>
-                </form>
-
-                <!-- Submitted Budgets History -->
-                <div class="budget-history" id="budgetHistory">
-                    <h3><i class="fa-solid fa-clock-rotate-left"></i> Histórico de Solicitações</h3>
-                    <div id="budgetList" class="history-list">
-                        <div class="empty-list-msg">Nenhum orçamento solicitado ainda.</div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- SECTION 5: AGENDAMENTO DE VISITAS -->
-            <section id="tab-schedule" class="app-section">
-                <div class="section-header">
-                    <h2><i class="fa-solid fa-calendar-check header-icon"></i> Agendar Visita Técnica</h2>
-                    <p>Agende uma visita para avaliação ou serviço presencial.</p>
-                </div>
-
-                <form id="scheduleForm" class="glass-form" onsubmit="handleScheduleSubmission(event)">
-                    <!-- Choose Service to schedule -->
-                    <div class="form-group">
-                        <label for="schedService"><i class="fa-solid fa-toolbox"></i> Serviço para a Visita</label>
-                        <select id="schedService" required>
-                            <option value="" disabled selected>Selecione um serviço...</option>
-                            <!-- Dynamic list -->
-                        </select>
-                    </div>
-
-                    <!-- Choose Date and Time Slot -->
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="schedDate"><i class="fa-solid fa-calendar"></i> Data Desejada</label>
-                            <input type="date" id="schedDate" required onchange="validateScheduleDate()">
-                        </div>
-                        <div class="form-group">
-                            <label for="schedPeriod"><i class="fa-solid fa-clock"></i> Período do Dia</label>
-                            <select id="schedPeriod" required>
-                                <option value="" disabled selected>Selecione...</option>
-                                <option value="Manhã (08:00 - 12:00)">Manhã (08h - 12h)</option>
-                                <option value="Tarde (13:00 - 18:00)">Tarde (13h - 18h)</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="schedDetails"><i class="fa-solid fa-paragraph"></i> Detalhes Adicionais do Agendamento</label>
-                        <textarea id="schedDetails" rows="2" placeholder="Ex: Preferência após as 14h, campainha está quebrada..."></textarea>
-                    </div>
-
-                    <button type="submit" class="btn-primary">
-                        <span><i class="fa-solid fa-calendar-plus"></i> Confirmar Agendamento</span>
-                    </button>
-                </form>
-
-                <!-- Confirmed Visits list -->
-                <div class="schedule-history" id="scheduleHistory">
-                    <h3><i class="fa-solid fa-calendar-days"></i> Visitas Agendadas</h3>
-                    <div id="scheduleList" class="history-list">
-                        <div class="empty-list-msg">Nenhuma visita agendada ainda.</div>
-                    </div>
-                </div>
-            </section>
-
-        </main>
-
-        <!-- App Footer (Instagram & Whatsapp contact as requested) -->
-        <footer class="app-footer">
-            <div class="footer-contact">
-                <a href="https://instagram.com/Digtech_01inf" target="_blank" class="instagram-link">
-                    <span class="insta-icon"><i class="fa-brands fa-instagram"></i></span>
-                    <span class="insta-handle">Digtech_01inf</span>
-                </a>
-                <span class="contact-divider">|</span>
-                <a href="https://wa.me/5587996263427" target="_blank" class="whatsapp-link">
-                    <span class="phone-icon"><i class="fa-solid fa-phone"></i></span>
-                    <span class="phone-number">(87) 99626-3427</span>
-                </a>
-            </div>
-        </footer>
-
-        <!-- Native Mobile Bottom Navigation Bar -->
-        <nav class="bottom-nav">
-            <button class="nav-item active" onclick="switchTab('tab-home', this)">
-                <i class="fa-solid fa-house"></i>
-                <span>Início</span>
-            </button>
-            <button class="nav-item" onclick="switchTab('tab-services', this)">
-                <i class="fa-solid fa-tags"></i>
-                <span>Serviços</span>
-            </button>
-            <button class="nav-item" onclick="switchTab('tab-clients', this)">
-                <i class="fa-solid fa-user-plus"></i>
-                <span>Cadastro</span>
-            </button>
-            <button class="nav-item" onclick="switchTab('tab-budget', this)">
-                <i class="fa-solid fa-file-invoice-dollar"></i>
-                <span>Orçamento</span>
-            </button>
-            <button class="nav-item" onclick="switchTab('tab-schedule', this)">
-                <i class="fa-solid fa-calendar-days"></i>
-                <span>Visitas</span>
-            </button>
-        </nav>
-    </div>
-
-    <!-- Notification Toast Element -->
-    <div id="toastNotification" class="toast hidden">
-        <i class="fa-solid fa-circle-info toast-icon"></i>
-        <span id="toastMessage">Mensagem de teste</span>
-    </div>
-
-    <!-- Main Logic Javascript -->
-    <script src="app.js"></script>
 </body>
 </html>
