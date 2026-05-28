@@ -1,10 +1,14 @@
 
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Digitech Informática</title>
+
+  <!-- PWA (para virar “app”) -->
+  <link rel="manifest" href="manifest.json">
 
   <style>
     body {
@@ -20,56 +24,44 @@
       padding: 25px 15px;
     }
 
-    header img {
-      width: 90px;
-      border-radius: 15px;
-      margin-bottom: 10px;
-    }
-
-    h1 {
-      margin: 5px 0;
+    header h1 {
+      margin: 0;
       font-size: 26px;
     }
 
-    p {
+    header p {
       color: #cbd5e1;
+      margin-top: 5px;
     }
 
     .container {
-      padding: 25px 15px;
+      padding: 20px;
     }
 
     .card {
       background: #1f2937;
-      margin: 10px auto;
       padding: 15px;
+      margin: 10px auto;
       border-radius: 12px;
-      max-width: 350px;
+      max-width: 400px;
     }
 
     .btn {
       display: block;
       margin: 10px auto;
-      padding: 12px;
-      width: 80%;
-      max-width: 300px;
+      padding: 14px;
+      width: 85%;
+      max-width: 320px;
       border-radius: 10px;
       text-decoration: none;
       font-weight: bold;
       color: white;
     }
 
-    .whatsapp {
-      background: #22c55e;
-    }
-
-    .servicos {
-      background: #3b82f6;
-    }
-
-    .suporte {
-      background: #f59e0b;
-    }
+    .whatsapp { background: #22c55e; }
+    .servicos { background: #3b82f6; }
+    .local { background: #f59e0b; }
+    .contato { background: #ef4444; }
 
     footer {
       margin-top: 30px;
@@ -84,7 +76,6 @@
 <body>
 
 <header>
-  <!-- COLOQUE SUA LOGO AQUI (opcional) -->
   <h1>Digitech Informática</h1>
   <p>Assistência técnica • Soluções digitais</p>
 </header>
@@ -93,22 +84,41 @@
 
   <div class="card">
     <h2>Bem-vindo 👋</h2>
-    <p>Escolha uma opção abaixo para atendimento rápido</p>
+    <p>Atendimento rápido e suporte especializado</p>
   </div>
 
+  <!-- WHATSAPP -->
   <a class="btn whatsapp"
      href="https://wa.me/5587996263427"
      target="_blank">
      📲 Falar no WhatsApp
   </a>
 
-  <a class="btn servicos" href="#">
-     🛠 Nossos Serviços
+  <!-- SERVIÇOS -->
+  <a class="btn servicos" href="#servicos">
+     🛠 Ver Serviços
   </a>
 
-  <a class="btn suporte" href="#">
-     💻 Suporte Técnico
+  <!-- LOCALIZAÇÃO -->
+  <a class="btn local"
+     href="https://www.google.com/maps"
+     target="_blank">
+     📍 Nossa Localização
   </a>
+
+  <!-- CONTATO -->
+  <a class="btn contato" href="mailto:seuemail@email.com">
+     ✉️ Enviar E-mail
+  </a>
+
+  <div id="servicos" class="card">
+    <h3>Serviços</h3>
+    <p>✔ Formatação de PC</p>
+    <p>✔ Remoção de vírus</p>
+    <p>✔ Instalação de programas</p>
+    <p>✔ Suporte remoto</p>
+    <p>✔ Manutenção geral</p>
+  </div>
 
 </div>
 
