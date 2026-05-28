@@ -20,11 +20,6 @@
       padding: 30px 20px;
     }
 
-    header img {
-      width: 120px;
-      border-radius: 20px;
-    }
-
     h1 {
       margin: 10px 0;
       font-size: 28px;
@@ -35,22 +30,31 @@
     }
 
     .container {
-      padding: 40px 20px;
+      padding: 30px 20px;
     }
 
     .btn {
-      display: inline-block;
-      background: #22c55e;
-      color: white;
-      padding: 15px 25px;
-      margin: 10px;
+      display: block;
+      width: 80%;
+      max-width: 300px;
+      margin: 10px auto;
+      padding: 15px;
       border-radius: 10px;
       text-decoration: none;
       font-weight: bold;
+      color: white;
     }
 
-    .btn:hover {
-      background: #16a34a;
+    .whatsapp {
+      background: #22c55e;
+    }
+
+    .servicos {
+      background: #3b82f6;
+    }
+
+    .suporte {
+      background: #f59e0b;
     }
 
     footer {
@@ -66,18 +70,32 @@
 <body>
 
 <header>
-  <!-- COLOQUE SUA LOGO AQUI (opcional) -->
   <h1>Digitech Informática</h1>
   <p>Assistência técnica e soluções digitais</p>
 </header>
 
 <div class="container">
-  <h2>Bem-vindo ao nosso aplicativo</h2>
-  <p>Acesse nossos serviços de forma rápida e fácil.</p>
 
-  <a class="btn" href="#">📞 Falar no WhatsApp</a>
-  <a class="btn" href="#">💻 Solicitar Suporte</a>
-  <a class="btn" href="#">🛠 Serviços</a>
+  <h2>Bem-vindo 👋</h2>
+  <p>Escolha uma opção abaixo:</p>
+
+  <!-- BOTÃO WHATSAPP -->
+  <a class="btn whatsapp" 
+     href="https://wa.me/55SEUNUMEROAQUI" 
+     target="_blank">
+     📲 Falar no WhatsApp
+  </a>
+
+  <!-- SERVIÇOS -->
+  <a class="btn servicos" href="#">
+     🛠 Ver Serviços
+  </a>
+
+  <!-- SUPORTE -->
+  <a class="btn suporte" href="#">
+     💻 Solicitar Suporte
+  </a>
+
 </div>
 
 <footer>
