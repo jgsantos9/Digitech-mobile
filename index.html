@@ -4,71 +4,74 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Digitech Informática</title>
-
-  <!-- PWA (para virar “app”) -->
-  <link rel="manifest" href="manifest.json">
 
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0b1220;
+      font-family: Arial;
+      background: #0b0b0b;
       color: white;
-      text-align: center;
     }
 
     header {
-      background: #111827;
-      padding: 25px 15px;
+      background: #111;
+      padding: 20px;
+      text-align: center;
+      border-bottom: 3px solid orange;
     }
 
     header h1 {
       margin: 0;
-      font-size: 26px;
+      color: orange;
     }
 
     header p {
-      color: #cbd5e1;
+      color: #ccc;
       margin-top: 5px;
     }
 
     .container {
-      padding: 20px;
+      padding: 15px;
     }
 
     .card {
-      background: #1f2937;
+      background: #1a1a1a;
+      margin: 10px 0;
       padding: 15px;
-      margin: 10px auto;
-      border-radius: 12px;
-      max-width: 400px;
+      border-radius: 10px;
+      border-left: 4px solid orange;
     }
 
     .btn {
       display: block;
-      margin: 10px auto;
-      padding: 14px;
-      width: 85%;
-      max-width: 320px;
-      border-radius: 10px;
+      padding: 12px;
+      margin: 10px 0;
+      text-align: center;
+      border-radius: 8px;
       text-decoration: none;
       font-weight: bold;
-      color: white;
+      color: black;
+      background: orange;
     }
 
-    .whatsapp { background: #22c55e; }
-    .servicos { background: #3b82f6; }
-    .local { background: #f59e0b; }
-    .contato { background: #ef4444; }
+    .btn:hover {
+      background: #ff8800;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0;
+      border-radius: 8px;
+      border: none;
+    }
 
     footer {
-      margin-top: 30px;
+      text-align: center;
       padding: 15px;
-      background: #111827;
-      font-size: 13px;
-      color: #94a3b8;
+      color: #777;
+      margin-top: 20px;
     }
   </style>
 </head>
@@ -77,47 +80,50 @@
 
 <header>
   <h1>Digitech Informática</h1>
-  <p>Assistência técnica • Soluções digitais</p>
+  <p>Assistência técnica • Orçamentos • Visitas técnicas</p>
 </header>
 
 <div class="container">
 
   <div class="card">
-    <h2>Bem-vindo 👋</h2>
-    <p>Atendimento rápido e suporte especializado</p>
+    <h2>📲 Atendimento Rápido</h2>
+    <a class="btn"
+       href="https://wa.me/5587996263427"
+       target="_blank">
+       Falar no WhatsApp
+    </a>
   </div>
 
-  <!-- WHATSAPP -->
-  <a class="btn whatsapp"
-     href="https://wa.me/5587996263427"
-     target="_blank">
-     📲 Falar no WhatsApp
-  </a>
-
-  <!-- SERVIÇOS -->
-  <a class="btn servicos" href="#servicos">
-     🛠 Ver Serviços
-  </a>
-
-  <!-- LOCALIZAÇÃO -->
-  <a class="btn local"
-     href="https://www.google.com/maps"
-     target="_blank">
-     📍 Nossa Localização
-  </a>
-
-  <!-- CONTATO -->
-  <a class="btn contato" href="mailto:seuemail@email.com">
-     ✉️ Enviar E-mail
-  </a>
-
-  <div id="servicos" class="card">
-    <h3>Serviços</h3>
+  <div class="card">
+    <h2>🛠 Serviços</h2>
     <p>✔ Formatação de PC</p>
     <p>✔ Remoção de vírus</p>
     <p>✔ Instalação de programas</p>
-    <p>✔ Suporte remoto</p>
-    <p>✔ Manutenção geral</p>
+    <p>✔ Suporte técnico</p>
+  </div>
+
+  <div class="card">
+    <h2>💰 Solicitar Orçamento</h2>
+
+    <form onsubmit="enviarOrcamento(); return false;">
+      <input type="text" id="nome" placeholder="Seu nome" required>
+      <input type="text" id="servico" placeholder="Serviço desejado" required>
+      <textarea id="msg" placeholder="Detalhes do problema" required></textarea>
+
+      <button class="btn" type="submit">Enviar Orçamento</button>
+    </form>
+  </div>
+
+  <div class="card">
+    <h2>📅 Agendar Visita Técnica</h2>
+
+    <form onsubmit="agendar(); return false;">
+      <input type="text" id="nome2" placeholder="Seu nome" required>
+      <input type="text" id="endereco" placeholder="Endereço" required>
+      <input type="date" id="data" required>
+
+      <button class="btn" type="submit">Agendar Visita</button>
+    </form>
   </div>
 
 </div>
@@ -125,6 +131,28 @@
 <footer>
   © 2026 Digitech Informática - Todos os direitos reservados
 </footer>
+
+<script>
+function enviarOrcamento() {
+  let nome = document.getElementById("nome").value;
+  let servico = document.getElementById("servico").value;
+  let msg = document.getElementById("msg").value;
+
+  let texto = `Olá, meu nome é ${nome}. Quero orçamento de: ${servico}. Detalhes: ${msg}`;
+
+  window.open("https://wa.me/55SEUNUMEROAQUI?text=" + encodeURIComponent(texto));
+}
+
+function agendar() {
+  let nome = document.getElementById("nome2").value;
+  let endereco = document.getElementById("endereco").value;
+  let data = document.getElementById("data").value;
+
+  let texto = `Olá, quero agendar visita técnica. Nome: ${nome}, Endereço: ${endereco}, Data: ${data}`;
+
+  window.open("https://wa.me/55SEUNUMEROAQUI?text=" + encodeURIComponent(texto));
+}
+</script>
 
 </body>
 </html>
