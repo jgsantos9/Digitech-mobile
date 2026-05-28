@@ -1,156 +1,158 @@
 
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Digitech Informática</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digitech Informática</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial;
-      background: #0b0b0b;
-      color: white;
-    }
+<style>
+body {
+  margin: 0;
+  font-family: Arial;
+  color: white;
+  background: url("https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1600&q=80") no-repeat center center fixed;
+  background-size: cover;
+}
 
-    header {
-      background: #111;
-      padding: 20px;
-      text-align: center;
-      border-bottom: 3px solid orange;
-    }
+/* camada escura */
+.overlay {
+  background: rgba(0,0,0,0.75);
+  min-height: 100vh;
+  padding-bottom: 40px;
+}
 
-    header h1 {
-      margin: 0;
-      color: orange;
-    }
+header {
+  text-align: center;
+  padding: 20px;
+  border-bottom: 2px solid orange;
+}
 
-    header p {
-      color: #ccc;
-      margin-top: 5px;
-    }
+h1 {
+  color: orange;
+  margin: 0;
+}
 
-    .container {
-      padding: 15px;
-    }
+.container {
+  padding: 15px;
+}
 
-    .card {
-      background: #1a1a1a;
-      margin: 10px 0;
-      padding: 15px;
-      border-radius: 10px;
-      border-left: 4px solid orange;
-    }
+.card {
+  background: rgba(20,20,20,0.9);
+  margin: 10px auto;
+  padding: 15px;
+  border-radius: 12px;
+  max-width: 450px;
+  border-left: 4px solid orange;
+}
 
-    .btn {
-      display: block;
-      padding: 12px;
-      margin: 10px 0;
-      text-align: center;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      color: black;
-      background: orange;
-    }
+/* serviços clicáveis */
+.servico {
+  background: #222;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
 
-    .btn:hover {
-      background: #ff8800;
-    }
+.servico:hover {
+  background: orange;
+  color: black;
+}
 
-    input, textarea {
-      width: 100%;
-      padding: 10px;
-      margin: 5px 0;
-      border-radius: 8px;
-      border: none;
-    }
+/* botões */
+.btn {
+  display: block;
+  margin-top: 10px;
+  padding: 12px;
+  text-align: center;
+  border-radius: 8px;
+  background: orange;
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+}
 
-    footer {
-      text-align: center;
-      padding: 15px;
-      color: #777;
-      margin-top: 20px;
-    }
-  </style>
+.btn:hover {
+  background: #ff8800;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #aaa;
+}
+</style>
 </head>
 
 <body>
 
+<div class="overlay">
+
 <header>
   <h1>Digitech Informática</h1>
-  <p>Assistência técnica • Orçamentos • Visitas técnicas</p>
+  <p>Redes • Computadores • Suporte Técnico</p>
 </header>
 
 <div class="container">
 
   <div class="card">
     <h2>📲 Atendimento Rápido</h2>
-    <a class="btn"
-       href="https://wa.me/5587996263427"
-       target="_blank">
-       Falar no WhatsApp
+    <a class="btn" id="whatsBtn" href="#" target="_blank">
+      Falar no WhatsApp
     </a>
   </div>
 
   <div class="card">
-    <h2>🛠 Serviços</h2>
-    <p>✔ Formatação de PC</p>
-    <p>✔ Remoção de vírus</p>
-    <p>✔ Instalação de programas</p>
-    <p>✔ Suporte técnico</p>
-  </div>
+    <h2>🛠 Escolha seu Serviço</h2>
 
-  <div class="card">
-    <h2>💰 Solicitar Orçamento</h2>
+    <div class="servico" onclick="selecionar('Formatação de computador')">
+      💻 Formatação de PC
+    </div>
 
-    <form onsubmit="enviarOrcamento(); return false;">
-      <input type="text" id="nome" placeholder="Seu nome" required>
-      <input type="text" id="servico" placeholder="Serviço desejado" required>
-      <textarea id="msg" placeholder="Detalhes do problema" required></textarea>
+    <div class="servico" onclick="selecionar('Remoção de vírus')">
+      🦠 Remoção de vírus
+    </div>
 
-      <button class="btn" type="submit">Enviar Orçamento</button>
-    </form>
-  </div>
+    <div class="servico" onclick="selecionar('Instalação de redes e roteadores')">
+      🌐 Redes e roteadores
+    </div>
 
-  <div class="card">
-    <h2>📅 Agendar Visita Técnica</h2>
+    <div class="servico" onclick="selecionar('Manutenção de computadores')">
+      🔧 Manutenção de computadores
+    </div>
 
-    <form onsubmit="agendar(); return false;">
-      <input type="text" id="nome2" placeholder="Seu nome" required>
-      <input type="text" id="endereco" placeholder="Endereço" required>
-      <input type="date" id="data" required>
-
-      <button class="btn" type="submit">Agendar Visita</button>
-    </form>
+    <div class="servico" onclick="selecionar('Suporte técnico remoto')">
+      🖥 Suporte remoto
+    </div>
   </div>
 
 </div>
 
 <footer>
-  © 2026 Digitech Informática - Todos os direitos reservados
+  © 2026 Digitech Informática
 </footer>
 
+</div>
+
 <script>
-function enviarOrcamento() {
-  let nome = document.getElementById("nome").value;
-  let servico = document.getElementById("servico").value;
-  let msg = document.getElementById("msg").value;
+let servicoSelecionado = "";
 
-  let texto = `Olá, meu nome é ${nome}. Quero orçamento de: ${servico}. Detalhes: ${msg}`;
-
-  window.open("https://wa.me/55SEUNUMEROAQUI?text=" + encodeURIComponent(texto));
+function selecionar(servico) {
+  servicoSelecionado = servico;
+  alert("Serviço selecionado: " + servico);
+  atualizarWhats();
 }
 
-function agendar() {
-  let nome = document.getElementById("nome2").value;
-  let endereco = document.getElementById("endereco").value;
-  let data = document.getElementById("data").value;
+function atualizarWhats() {
+  let numero = "5587996263427";
 
-  let texto = `Olá, quero agendar visita técnica. Nome: ${nome}, Endereço: ${endereco}, Data: ${data}`;
+  let texto = "Olá! Quero suporte de informática. Serviço: " + servicoSelecionado;
 
-  window.open("https://wa.me/55SEUNUMEROAQUI?text=" + encodeURIComponent(texto));
+  document.getElementById("whatsBtn").href =
+    "https://wa.me/" + numero + "?text=" + encodeURIComponent(texto);
 }
 </script>
 
